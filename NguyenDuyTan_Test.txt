@@ -1,0 +1,60 @@
+I.	Lý Thuyết
+A.	HTML:
+1. Giúp làm rõ ràng nội dung chứa, giúp công cụ tìm kiếm hiểu rõ về cấu trúc trang web.
+
+2. Thuộc tính lazy loading được dùng để tối ưu hóa hiệu năng sử dụng. Tránh tình trạng phải chờ toàn bộ api tải từ server, gây trải nghiệm tồi tệ cho người dùng.
+B.	CSS:
+1.	
+–	Relative: dùng với  vị trí thực của phần tử trên UI.
+-	Absolute: dùng với vị trí đặt trên toàn bộ các lớp layout trước đó(hạn chế dùng, vì nó sẽ khó bảo trì sau này cho các UI có nhiều tầng khác nhau).
+-	Fixed: dùng với vị trí trên màn hình, khi cuộn trang vẫn hiển thị.
+2.	Flexbox: bố cục 1 chiều(theo hàng/ cột). Khi cần căn chỉnh 1 chiều.
+Gird: Bố cục 2 chiều(theo hang/ cột). Phù hợp với các UI phức tạp. Khi cần căn chỉnh cả hang và cột.
+C.	Javascript:
+1.	Event bubbling là sự kiện lan truyền từ con lên cha.
+Event capturing là sự kiên lan truyền từ cha xuống con.
+Dùng event.stopPropagation() để ngăn ngừa.
+2.	Var: có phạm vị toàn cục hoặc function, có truy cập trước khi khai báo.
+Let: có phạm vi là 1 block, không thể truy cập trước khi khai báo(nên dùng let thay vì dùng var).
+Const: giống như let, nhưng nó không thể gán lại giá trị.
+3.	Không có this riêng, this sẽ lấy từ cha trong arrow function. Không thể dùng làm constructor với new. Không thể dùng arguments object.
+D.	ReactJS:
+1.	Class component: Dùng ES6 có lifecycle method. Viết khó hiểu hơn.
+Functional component: Dùng hooks, tối giản, ngắn gọn dễ hiểu, hiệu suất tốt hơn(giúp lập trình viên ngày nay dễ dàng sử dụng và tiếp cận hơn).
+2.	Dùng setState để cập nhật lại giá trị của component khi cần thiết. Có thể cập nhật lại UI nếu cần(khi dùng với hook như useEffect,..).
+3.	Context API để lưu trữ, và truyền dữ liệu giữa các component mà không cần sử dụng props(dùng với ứng dụng quản lý nhỏ, không quá phức tạp.) Dễ dàng sử dụng hơn Redux vì nó là thư viện tích hợp sẵn của React. 
+E.	TypeScript:
+Type: dùng để định nghĩa kiểu dữ liệu.
+Interface: dùng để trả về kiểu object và có thể mở trộng.
+Khi cần mở rộng và xử lý dữ liệu lớn, như là object thì ta sử dụng interface. Khi chỉ cần định nghĩa là lấy kiểu dữ liệu thì dùng type.
+
+
+
+
+
+II.	Toán Logic:
+1.
+function reverseStr(str) {
+let reverse = “”;
+for(let i = str.length – 1; i >= 0; i--) {
+reverse += str[i];
+}
+return reverse;
+}
+console.log(reverseStr(“hello world”));
+2.
+function countChar(str) {
+let count = {};
+for (let char of str) {
+count[char] = (count[char] || 0) + 1;
+}
+return count;
+}
+console.log(countChar(“hello world”));
+3.
+4. 
+function uniqueNum(arr) {
+	let arrUnique = new Set(arr);
+	return Array.from(arrUnique);
+}
+console.log(uniqueNum([1, 2, 3, 4, 5 ,6]));
